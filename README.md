@@ -1,5 +1,7 @@
 # 🚀 MyLifeGram (Projeto de React)
 
+![Foto do Projeto MyLifeGram]([https://github.com/jessicaccl/meu-trabalho-react/blob/main/mylifegram.jpeg?raw=true])
+
 ## 📖 Visão Geral do Projeto
 MyLifeGram é um clone funcional da interface do Instagram, construído como projeto para a disciplina de React. O objetivo foi aplicar conceitos fundamentais e avançados da biblioteca, criando um aplicativo de "feed social" dinâmico e interativo.
 
