@@ -80,12 +80,16 @@ Para testar o projeto, siga os passos abaixo:
 
 Siga este guia para testar as principais features dinâmicas:
 
-1.  **Testar a "Curtida" (Estado Local):**
+1.  **Testar o Login (Mock):**
+    * Na página `/login`, digite **qualquer e-mail e qualquer senha** (ex: "teste@teste.com" / "123").
+    * **Resultado:** O aplicativo irá autenticar e redirecionar você para a página `/home`.
+
+2.  **Testar a "Curtida" (Estado Local):**
     * Na página `/home`, role o feed.
     * Clique no ícone de coração (contorno) em qualquer post.
     * **Resultado:** O ícone deve se tornar vermelho e preenchido. Clicar em outro post não afetará o primeiro.
 
-2.  **Testar a Criação de Post (Estado Elevado):**
+3.  **Testar a Criação de Post (Estado Elevado):**
     * Clique no ícone `+` no menu inferior.
     * O modal "Criar nova publicação" deve aparecer.
     * Preencha os campos. Para a URL da imagem, você pode usar um link de teste: `https://picsum.photos/600`
@@ -93,14 +97,14 @@ Siga este guia para testar as principais features dinâmicas:
     * Clique em "Publicar".
     * **Resultado:** O modal fechará e o seu novo post aparecerá no topo do feed.
 
-3.  **Testar o Post com Música (MP3):**
+4.  **Testar o Post com Música (MP3):**
     * Abra o modal de novo post.
     * No campo "URL da Mídia", coloque uma imagem.
     * No campo "Caminho da música", cole este link de MP3: `https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3` 
     * Clique em "Publicar".
     * **Resultado:** O novo post aparecerá com um player `<audio>` padrão logo abaixo da legenda.
 
-4.  **Testar o Post com Música (Spotify):**
+5.  **Testar o Post com Música (Spotify):**
     * Vá ao Spotify e escolha uma música.
     * Clique em "Compartilhar" (...) -> "Embutir faixa".
     * Copie **apenas o link `src`** do `<iframe>`. (Ex: `https://open.spotify.com/embed/track/4cOdK2wGLETKBW3PvgPWqT`)
