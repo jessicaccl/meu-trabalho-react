@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# 🚀 MyLifeGram (Projeto de React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📖 Visão Geral do Projeto
+MyLifeGram é um clone funcional da interface do Instagram, construído como projeto para a disciplina de React. O objetivo foi aplicar conceitos fundamentais e avançados da biblioteca, criando um aplicativo de "feed social" dinâmico e interativo.
 
-## Available Scripts
+O projeto foi iniciado com `Create React App` e, como desafio técnico, foi **migrado com sucesso para `Vite`**, alinhando-se às ferramentas de *build* mais modernas do ecossistema React.
 
-In the project directory, you can run:
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Funcionalidades Implementadas
+O aplicativo é totalmente funcional (no modo "mockado", sem backend) e permite ao usuário:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **Tela de Login:** Uma tela de login visualmente idêntica à do Instagram, com ícones flutuantes (usando `styled-components` com props `$`) e navegação.
+* **Feed da Home:** Uma página principal que exibe um feed de posts, stories e menus de navegação (superior e inferior).
+* **"Curtir" um Post:** Cada post tem seu próprio estado. Clicar no ícone de coração o torna vermelho (via `useState` local no `Card`).
+* **Criar um Novo Post:** Clicar no ícone `+` no menu inferior abre um modal.
+* **Publicar no Feed:** Ao preencher o formulário no modal (URL da imagem, legenda) e clicar em "Publicar", o novo post aparece no topo do feed.
+* **Posts com Música:** O sistema de postagem permite adicionar uma URL de `.mp3` (que renderiza um player `<audio>`) ou um link de "Embed" do Spotify (que renderiza o `<iframe>` do player do Spotify).
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Stack Tecnológica (O que foi usado)
 
-### `npm run build`
+Este projeto foi construído com as seguintes tecnologias e conceitos:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **React (v18+)**: Biblioteca principal para a construção da UI.
+* **Vite**: A ferramenta de *build* e servidor de desenvolvimento (substituindo o Create React App).
+* **JavaScript (ES6+)** e **JSX**.
+* **`styled-components`**: Para toda a estilização CSS-in-JS, permitindo a criação de componentes de UI encapsulados e dinâmicos.
+* **`react-router-dom`**: Para a navegação e roteamento entre as páginas `/login` e `/home`.
+* **`react-icons`**: Para a biblioteca de ícones (corações, menu, etc.) idênticos aos do Instagram.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧠 Conceitos-Chave de React Aplicados
 
-### `npm run eject`
+O foco do projeto foi demonstrar o domínio dos seguintes padrões do React:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1.  **Componentização:** O projeto é 100% modular. A UI é dividida em componentes reutilizáveis (ex: `Button`, `Input`, `Card`, `Stories`, `Header`, `BottomNav`, `ModalNovoPost`).
+2.  **Props (Propriedades):** Os componentes "Pai" (como a `Home`) passam dados para os componentes "Filho" (como `Card` e `Stories`).
+3.  **Estado Local (useState):** Usado em componentes "Filho" para controlar sua própria lógica interna.
+    * **Exemplo:** O `Card.jsx` usa `useState` para "lembrar" se ele foi curtido (`isLiked`) ou não, sem afetar os outros cards.
+4.  **Estado Elevado (Lifting State Up):** O conceito mais avançado do projeto. O estado "mestre" (a lista de `posts`) vive no componente "Pai" (`Home.jsx`).
+    * **Exemplo:** O `ModalNovoPost` (Filho) coleta os dados e os "envia para cima" (via uma função passada por `props`) para a `Home`, que usa o `setPosts` para atualizar o feed de todos os componentes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🏁 Como Rodar o Projeto Localmente
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para testar o projeto, siga os passos abaixo:
 
-## Learn More
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/jessicaccl/meu-trabalho-react.git](https://github.com/jessicaccl/meu-trabalho-react)
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2.  **Entre na pasta do projeto:**
+    ```bash
+    cd meu-trabalho-react
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
 
-### Code Splitting
+4.  **Inicie o servidor do Vite:**
+    ```bash
+    npm start
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5.  Abra [http://localhost:5173](http://localhost:5173) no seu navegador.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🧪 Como Testar as Funcionalidades 
 
-### Making a Progressive Web App
+Siga este guia para testar as principais features dinâmicas:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1.  **Testar a "Curtida" (Estado Local):**
+    * Na página `/home`, role o feed.
+    * Clique no ícone de coração (contorno) em qualquer post.
+    * **Resultado:** O ícone deve se tornar vermelho e preenchido. Clicar em outro post não afetará o primeiro.
 
-### Advanced Configuration
+2.  **Testar a Criação de Post (Estado Elevado):**
+    * Clique no ícone `+` no menu inferior.
+    * O modal "Criar nova publicação" deve aparecer.
+    * Preencha os campos. Para a URL da imagem, você pode usar um link de teste: `https://picsum.photos/600`
+    * Digite uma legenda.
+    * Clique em "Publicar".
+    * **Resultado:** O modal fechará e o seu novo post aparecerá no topo do feed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3.  **Testar o Post com Música (MP3):**
+    * Abra o modal de novo post.
+    * No campo "URL da Mídia", coloque uma imagem.
+    * No campo "Caminho da música", cole este link de MP3: `https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3` 
+    * Clique em "Publicar".
+    * **Resultado:** O novo post aparecerá com um player `<audio>` padrão logo abaixo da legenda.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4.  **Testar o Post com Música (Spotify):**
+    * Vá ao Spotify e escolha uma música.
+    * Clique em "Compartilhar" (...) -> "Embutir faixa".
+    * Copie **apenas o link `src`** do `<iframe>`. (Ex: `https://open.spotify.com/embed/track/4cOdK2wGLETKBW3PvgPWqT`)
+    * Cole esse link "Embed" no campo "Caminho da música" no modal.
+    * Clique em "Publicar".
+    * **Resultado:** O novo post aparecerá com o player oficial do Spotify embutido.
