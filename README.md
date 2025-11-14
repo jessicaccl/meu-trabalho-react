@@ -1,5 +1,7 @@
 # 🚀 MyLifeGram (Projeto de React)
 
+Acesse o link : https://mylifegram.netlify.app/login
+
 ![Foto do Projeto MyLifeGram](https://github.com/jessicaccl/meu-trabalho-react/blob/main/mylifegram.jpeg?raw=true)
 
 ## 📖 Visão Geral do Projeto
